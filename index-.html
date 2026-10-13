@@ -5,101 +5,117 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080808">
-<title>DK VISUALS | Video Editor</title>
-<meta name="description" content="DK VISUALS - Professional Reels, Cinematic, YouTube and Promotional Video Editing. 50+ Clients.">
+<title>DK VISUALS | Professional Video Editor</title>
+<meta name="description" content="DK VISUALS offers Instagram Reels, cinematic, YouTube and promotional video editing.">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--red:#ff2638;--black:#080808;--card:#141414}
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--red:#ff2638;--bg:#080808;--card:#141414;--text:#fff;--muted:#aaa}
 html{scroll-behavior:smooth}
-body{background:var(--black);color:#fff;font-family:Arial,sans-serif;line-height:1.6}
-a{text-decoration:none;color:inherit}
-.loading{position:fixed;inset:0;background:#050505;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:.6s}
-.loading.hide{opacity:0;visibility:hidden}
-.load-logo{font-size:clamp(36px,9vw,65px);font-weight:900;letter-spacing:3px;text-shadow:0 0 25px #ff2638}
+body{background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.container{width:100%;max-width:1050px;margin:auto;padding-left:18px;padding-right:18px}
+
+/* LOADING SCREEN */
+#loading{position:fixed;inset:0;z-index:99999;background:#050505;display:flex;flex-direction:column;justify-content:center;align-items:center;transition:opacity .6s,visibility .6s}
+#loading.hide{opacity:0;visibility:hidden;pointer-events:none}
+.load-logo{font-size:clamp(36px,9vw,65px);font-weight:900;letter-spacing:3px;text-shadow:0 0 25px #ff263866}
 .load-logo span,.red{color:var(--red)}
-.bar{width:180px;height:4px;background:#292929;margin-top:22px;overflow:hidden;border-radius:5px}
-.bar:after{content:"";display:block;width:40%;height:100%;background:var(--red);animation:loading 1.2s infinite}
-.loading small{margin-top:13px;letter-spacing:4px;color:#aaa}
-@keyframes loading{from{transform:translateX(-110%)}to{transform:translateX(300%)}}
-header{position:sticky;top:0;z-index:100;background:#090909f2;border-bottom:1px solid #292929}
-nav{max-width:1100px;margin:auto;padding:15px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.load-bar{width:180px;height:4px;background:#292929;border-radius:5px;overflow:hidden;margin-top:22px}
+.load-bar:after{content:"";display:block;width:40%;height:100%;background:var(--red);animation:loadmove 1s infinite}
+.load-text{font-size:11px;letter-spacing:4px;color:#aaa;margin-top:14px}
+@keyframes loadmove{from{transform:translateX(-110%)}to{transform:translateX(300%)}}
+
+/* NAVIGATION */
+header{position:sticky;top:0;z-index:100;background:#090909f5;border-bottom:1px solid #292929}
+nav{max-width:1100px;margin:auto;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .brand{font-size:21px;font-weight:900;white-space:nowrap}
 .brand span{color:var(--red)}
-.links{display:flex;flex-wrap:wrap;gap:13px;font-size:12px}
-.links a:hover{color:var(--red)}
-section{padding:70px 18px;scroll-margin-top:65px}
-.container{max-width:1050px;margin:auto}
-.hero{min-height:78vh;display:flex;align-items:center;background:radial-gradient(ellipse at 90% 35%,#7d101b55,transparent 55%);overflow:hidden}
-.eyebrow{font-size:12px;font-weight:bold;letter-spacing:4px;color:var(--red)}
-h1{font-size:clamp(43px,10vw,84px);line-height:1.04;margin:18px 0;font-weight:900}
-h1 span{color:var(--red);text-shadow:0 0 24px #ff263833}
-.hero p,.muted{color:#aaa}
-.hero p{max-width:580px;font-size:15px}
-.buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
-.btn{display:inline-block;padding:12px 18px;border:1px solid var(--red);border-radius:5px;font-size:13px;font-weight:bold;transition:.25s}
-.btn.redbtn{background:var(--red)}
-.btn:hover{transform:translateY(-3px);box-shadow:0 0 18px #ff263855}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:570px;margin-top:35px}
-.stat{background:#141414;border:1px solid #292929;padding:14px 8px;border-radius:7px}
-.stat strong{display:block;font-size:24px;color:var(--red)}
-.stat small{font-size:10px;color:#bbb}
+.navlinks{display:flex;gap:13px;flex-wrap:wrap;font-size:12px}
+.navlinks a:hover{color:var(--red)}
+
+/* HERO */
+section{padding:70px 0;scroll-margin-top:65px}
+.hero{min-height:76vh;display:flex;align-items:center;background:radial-gradient(ellipse at 90% 40%,#72101b55,transparent 55%);overflow:hidden}
+.eyebrow{font-size:12px;color:var(--red);font-weight:bold;letter-spacing:4px}
+h1{font-size:clamp(43px,10vw,84px);line-height:1.05;font-weight:900;margin:18px 0}
+h1 span{color:var(--red);text-shadow:0 0 25px #ff263844}
+.hero-desc{max-width:600px;color:var(--muted);font-size:15px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-block;text-align:center;padding:12px 18px;border:1px solid var(--red);border-radius:5px;font-size:13px;font-weight:bold;transition:.25s}
+.btn-primary{background:var(--red);color:white}
+.btn:hover{transform:translateY(-3px);box-shadow:0 0 18px #ff263844}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:570px;margin-top:36px}
+.stat{padding:14px 8px;border:1px solid #292929;border-radius:7px;background:#141414}
+.stat strong{display:block;color:var(--red);font-size:24px}
+.stat small{color:#bbb;font-size:10px}
+
+/* HEADINGS AND CARDS */
 .heading{text-align:center;margin-bottom:32px}
-.heading h2{font-size:clamp(27px,6vw,41px);line-height:1.2;margin-bottom:10px}
+.heading h2{font-size:clamp(28px,6vw,42px);line-height:1.2;margin:8px 0}
 .heading h2 span{color:var(--red)}
-.heading p{font-size:13px;color:#aaa}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.card{background:var(--card);border:1px solid #292929;border-radius:9px;overflow:hidden;transition:.25s}
+.heading p{color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.card{background:var(--card);border:1px solid #292929;border-radius:9px;overflow:hidden;transition:.25s;min-width:0}
 .card:hover{transform:translateY(-4px);border-color:var(--red)}
 .card img{display:block;width:100%;height:155px;object-fit:cover;background:#222}
 .card-body{padding:14px}
-.card h3{font-size:15px;margin-bottom:5px}
-.card p{font-size:12px;color:#aaa}
-.num{font-size:11px;letter-spacing:2px;color:var(--red);font-weight:bold}
+.card h3{font-size:16px;margin:5px 0}
+.card p{font-size:12px;color:var(--muted)}
+.project-no{font-size:10px;letter-spacing:2px;color:var(--red);font-weight:bold}
+.work-note{font-size:12px;color:var(--muted);text-align:center;margin-top:18px}
+
+/* ABOUT */
 .about{background:#101010}
-.about-text{max-width:750px;margin:auto;text-align:center}
-.about-text>p{color:#bbb;font-size:14px;margin-top:12px}
+.about-content{max-width:760px;margin:auto;text-align:center}
+.about-content>p{font-size:14px;color:#bbb;margin-top:13px}
 .skills{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin-top:22px}
 .skills span{font-size:12px;padding:8px 12px;border:1px solid #393939;border-radius:5px}
 .skills span:before{content:"✓ ";color:var(--red)}
-.contact-box{border:1px solid #462027;border-radius:10px;padding:30px 18px;text-align:center;background:radial-gradient(ellipse at top,#59101b55,transparent 75%),#111}
-.contact-box p{color:#bbb;font-size:14px;margin:12px auto 20px;max-width:500px}
-.contact-links{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
-footer{border-top:1px solid #292929;text-align:center;padding:23px 12px;color:#999;font-size:12px}
+
+/* CONTACT */
+.contact-box{padding:30px 18px;text-align:center;border:1px solid #482027;border-radius:10px;background:radial-gradient(ellipse at top,#59101b55,transparent 75%),#111}
+.contact-box h2{font-size:clamp(27px,6vw,42px);line-height:1.2;margin-top:12px}
+.contact-box>p{color:#bbb;font-size:14px;max-width:520px;margin:14px auto}
+.contact-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:22px}
+footer{text-align:center;padding:23px 12px;border-top:1px solid #292929;color:#999;font-size:12px}
 footer span{color:var(--red)}
-.reveal{animation:appear .8s ease both}
-@keyframes appear{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.reveal{animation:fadeup .8s ease both}
+@keyframes fadeup{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
 @media(min-width:700px){
 .grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 .card img{height:185px}
 }
 @media(max-width:430px){
-nav{padding:12px 10px}
+nav{padding:12px 9px}
 .brand{font-size:17px}
-.links{gap:8px;font-size:10px}
-section{padding:55px 14px}
-.hero{min-height:76vh}
+.navlinks{gap:8px;font-size:10px}
+section{padding:55px 0}
+.hero{min-height:75vh}
 .stats{gap:6px}
 .stat strong{font-size:21px}
 .stat small{font-size:9px}
 .card img{height:125px}
 .card-body{padding:10px}
+.card h3{font-size:14px}
 }
 </style>
 </head>
 
 <body>
 
-<div class="loading" id="loading">
+<div id="loading">
   <div class="load-logo">DK <span>VISUALS</span></div>
-  <div class="bar"></div>
-  <small>LOADING EXPERIENCE</small>
+  <div class="load-bar"></div>
+  <div class="load-text">LOADING EXPERIENCE</div>
 </div>
 
 <header>
 <nav>
-  <a href="#home" class="brand">DK <span>VISUALS</span></a>
-  <div class="links">
+  <a class="brand" href="#home">DK <span>VISUALS</span></a>
+  <div class="navlinks">
     <a href="#home">Home</a>
     <a href="#services">Services</a>
     <a href="#work">Work</a>
@@ -115,15 +131,15 @@ section{padding:55px 14px}
 <div class="container reveal">
   <div class="eyebrow">VIDEO EDITOR & CREATIVE ARTIST</div>
   <h1>YOUR VISION.<br>MY <span>EDITING.</span></h1>
-  <p>I create engaging Reels, cinematic videos, YouTube edits and promotional videos that help your content stand out.</p>
+  <p class="hero-desc">I create engaging Instagram Reels, cinematic videos, YouTube edits and promotional videos to make your content stand out.</p>
   <div class="buttons">
-    <a class="btn redbtn" href="#work">EXPLORE MY WORK ↗</a>
+    <a class="btn btn-primary" href="#work">EXPLORE MY WORK ↗</a>
     <a class="btn" href="https://wa.me/916352300345" target="_blank" rel="noopener">HIRE ME ↗</a>
   </div>
   <div class="stats">
-    <div class="stat"><strong>50+</strong><small>HAPPY CLIENTS</small></div>
+    <div class="stat"><strong>50+</strong><small>CLIENTS SERVED</small></div>
     <div class="stat"><strong>4+</strong><small>EDITING SERVICES</small></div>
-    <div class="stat"><strong>100%</strong><small>CREATIVE FOCUS</small></div>
+    <div class="stat"><strong>CREATIVE</strong><small>VIDEO EDITING</small></div>
   </div>
 </div>
 </section>
@@ -131,26 +147,26 @@ section{padding:55px 14px}
 <section id="services">
 <div class="container">
   <div class="heading">
-    <div class="eyebrow">WHAT I DO</div>
+    <div class="eyebrow">WHAT I PROVIDE</div>
     <h2>MY <span>SERVICES</span></h2>
     <p>Creative editing for your content and brand.</p>
   </div>
   <div class="grid">
     <article class="card">
-      <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=700&q=80" alt="Social media content creation" loading="lazy">
-      <div class="card-body"><div class="num">01 / REELS</div><h3>Instagram Reels Editing</h3><p>Engaging short videos, transitions, effects and captions.</p></div>
+      <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Social media content" loading="lazy">
+      <div class="card-body"><div class="project-no">SERVICE 01</div><h3>Instagram Reels Editing</h3><p>Short-form videos, transitions, effects and captions.</p></div>
     </article>
     <article class="card">
-      <img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=700&q=80" alt="Cinematic camera and video production" loading="lazy">
-      <div class="card-body"><div class="num">02 / CINEMATIC</div><h3>Cinematic Editing</h3><p>Creative storytelling, mood, transitions and color grading.</p></div>
+      <img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Cinematic camera" loading="lazy">
+      <div class="card-body"><div class="project-no">SERVICE 02</div><h3>Cinematic Video Editing</h3><p>Storytelling, creative cuts and cinematic color grading.</p></div>
     </article>
     <article class="card">
-      <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=700&q=80" alt="Video production equipment" loading="lazy">
-      <div class="card-body"><div class="num">03 / YOUTUBE</div><h3>YouTube Video Editing</h3><p>Clean cuts, engaging pacing, titles and visual effects.</p></div>
+      <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Video production" loading="lazy">
+      <div class="card-body"><div class="project-no">SERVICE 03</div><h3>YouTube Video Editing</h3><p>Engaging pacing, clean cuts, titles and effects.</p></div>
     </article>
     <article class="card">
-      <img src="https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=700&q=80" alt="Creative visual production" loading="lazy">
-      <div class="card-body"><div class="num">04 / PROMO</div><h3>Promotional Videos</h3><p>Creative promotional content for businesses and brands.</p></div>
+      <img src="https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Creative visual production" loading="lazy">
+      <div class="card-body"><div class="project-no">SERVICE 04</div><h3>Promotional Videos</h3><p>Promotional content for businesses, products and brands.</p></div>
     </article>
   </div>
 </div>
@@ -159,43 +175,43 @@ section{padding:55px 14px}
 <section id="work">
 <div class="container">
   <div class="heading">
-    <div class="eyebrow">SELECTED VISUALS</div>
-    <h2>MY <span>WORK</span></h2>
-    <p>Visual examples of the style and creativity I work with.</p>
+    <div class="eyebrow">MY CREATIVE PORTFOLIO</div>
+    <h2>SELECTED <span>WORK</span></h2>
+    <p>Video editing styles and visual inspiration.</p>
   </div>
   <div class="grid">
     <article class="card">
-      <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=700&q=80" alt="Cinema screen and visual storytelling" loading="lazy">
-      <div class="card-body"><div class="num">PROJECT 01</div><h3>Cinematic Visuals</h3><p>Video editing portfolio</p></div>
+      <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Cinema and storytelling" loading="lazy">
+      <div class="card-body"><div class="project-no">PROJECT 01</div><h3>Cinematic Visuals</h3><p>Creative visual storytelling.</p></div>
     </article>
     <article class="card">
-      <img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=700&q=80" alt="Camera setup" loading="lazy">
-      <div class="card-body"><div class="num">PROJECT 02</div><h3>Creative Edits</h3><p>Visual storytelling</p></div>
+      <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Film production" loading="lazy">
+      <div class="card-body"><div class="project-no">PROJECT 02</div><h3>Creative Editing</h3><p>Visual style and transitions.</p></div>
     </article>
     <article class="card">
-      <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=700&q=80" alt="Video editing and production" loading="lazy">
-      <div class="card-body"><div class="num">PROJECT 03</div><h3>Video Production</h3><p>Editing and effects</p></div>
+      <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Video editing equipment" loading="lazy">
+      <div class="card-body"><div class="project-no">PROJECT 03</div><h3>Video Production</h3><p>Editing and visual effects.</p></div>
     </article>
     <article class="card">
-      <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=700&q=80" alt="Video production studio" loading="lazy">
-      <div class="card-body"><div class="num">PROJECT 04</div><h3>Content Creation</h3><p>Creative video style</p></div>
+      <img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&amp;fit=crop&amp;w=700&amp;q=80" alt="Camera and filmmaking" loading="lazy">
+      <div class="card-body"><div class="project-no">PROJECT 04</div><h3>Visual Stories</h3><p>Creative content concepts.</p></div>
     </article>
   </div>
-  <p class="muted" style="text-align:center;font-size:12px;margin-top:18px">These are illustrative images. Replace them with screenshots or thumbnails of your actual edited videos for a true portfolio.</p>
+  <p class="work-note">Portfolio preview images are illustrative examples. Add your own edited video thumbnails here to show your actual work.</p>
 </div>
 </section>
 
 <section class="about" id="about">
-<div class="container about-text">
-  <div class="eyebrow">GET TO KNOW ME</div>
+<div class="container about-content">
+  <div class="eyebrow">ABOUT THE CREATOR</div>
   <div class="heading"><h2>ABOUT <span>DK VISUALS</span></h2></div>
-  <p>Welcome to DK VISUALS! I create video edits with a focus on creativity, visual storytelling and engaging content. I work on Instagram Reels, cinematic videos, YouTube videos and promotional content.</p>
-  <p>With experience serving 50+ clients, my goal is to turn ideas into compelling visuals and help every project communicate its message.</p>
+  <p>Welcome to DK VISUALS! I create engaging video edits with a focus on creativity, visual storytelling and presentation.</p>
+  <p>I provide Instagram Reels Editing, Cinematic Video Editing, YouTube Video Editing and Promotional Video Editing. Having served 50+ clients, I aim to turn creative ideas into compelling visual content.</p>
   <div class="skills">
     <span>Video Editing</span>
-    <span>Transitions & Effects</span>
+    <span>Transitions &amp; Effects</span>
     <span>Color Grading</span>
-    <span>Storytelling</span>
+    <span>Visual Storytelling</span>
     <span>Social Media Content</span>
     <span>Creative Editing</span>
   </div>
@@ -206,13 +222,13 @@ section{padding:55px 14px}
 <div class="container">
   <div class="contact-box">
     <div class="eyebrow">LET'S WORK TOGETHER</div>
-    <h2 style="font-size:clamp(27px,6vw,42px);margin-top:10px">HAVE A PROJECT IN <span class="red">MIND?</span></h2>
+    <h2>HAVE A PROJECT IN <span class="red">MIND?</span></h2>
     <p>Need Reels, cinematic videos, YouTube edits or promotional content? Contact DK VISUALS to discuss your project.</p>
     <div class="contact-links">
-      <a class="btn redbtn" href="https://wa.me/916352300345" target="_blank" rel="noopener">WHATSAPP ME ↗</a>
+      <a class="btn btn-primary" href="https://wa.me/916352300345" target="_blank" rel="noopener">WHATSAPP ME ↗</a>
       <a class="btn" href="https://www.instagram.com/dk_x.07/" target="_blank" rel="noopener">INSTAGRAM ↗</a>
     </div>
-    <p style="margin-top:22px">WhatsApp: +91 6352300345</p>
+    <p>WhatsApp: +91 6352300345</p>
     <p>Instagram: @dk_x.07</p>
   </div>
 </div>
@@ -221,16 +237,22 @@ section{padding:55px 14px}
 </main>
 
 <footer>
-  <p>© <span id="year"></span> <span>DK VISUALS</span> | Crafted with creativity.</p>
+  <p>© <span id="year"></span> <span>DK VISUALS</span> | Video Editing Portfolio</p>
 </footer>
 
 <script>
-window.addEventListener("load",function(){
-  setTimeout(function(){
-    document.getElementById("loading").classList.add("hide");
-  },1600);
-});
-document.getElementById("year").textContent=new Date().getFullYear();
+(function(){
+  var loader=document.getElementById("loading");
+  function hideLoader(){
+    if(loader){loader.classList.add("hide");}
+  }
+  window.addEventListener("load",function(){
+    setTimeout(hideLoader,1200);
+  });
+  setTimeout(hideLoader,4000);
+  var year=document.getElementById("year");
+  if(year){year.textContent=new Date().getFullYear();}
+})();
 </script>
 
 </body>
